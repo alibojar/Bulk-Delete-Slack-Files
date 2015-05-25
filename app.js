@@ -33,7 +33,7 @@ var getFiles = function() {
   var d = new Date();
   d.setDate(d.getDate() - 2);
   var twoDaysAgo = Math.round(1432410192075 / 1000);
-  
+
   var postData = {
     token: 'xoxp-2191906948-2195788498-4989900812-ca22c5',
     user: 'U025RP6EN',
@@ -53,6 +53,10 @@ var getFiles = function() {
 }
 
 app.get('/', function(req, res) {
+  res.render('index.hbs');
+});
+
+app.post('/', function(req, res) {
   getFiles().then(function(body) {
     res.json(body);
   });
