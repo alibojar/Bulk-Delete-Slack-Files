@@ -53,11 +53,9 @@ var getFiles = function() {
 }
 
 app.get('/', function(req, res) {
-  //getFiles().then(function(body) {
-  //  res.json(body);
-  //});
-res.end('hi');
-
+  getFiles().then(function(body) {
+    res.json(body);
+  });
 });
 
 // catch 404 and forward to error handler
