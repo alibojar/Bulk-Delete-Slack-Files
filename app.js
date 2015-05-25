@@ -53,9 +53,10 @@ var getFiles = function() {
 }
 
 app.get('/', function(req, res) {
-  getFiles().then(function(body) {
-    res.json(body);
-  });
+  //getFiles().then(function(body) {
+  //  res.json(body);
+  //});
+res.end('hi');
 
 });
 
