@@ -4,7 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var request = require('request');
+var unirest = require('unirest');
 var Q = require('q');
 
 var routes = require('./routes/index');
@@ -27,9 +27,35 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+var getFiles = function() {
+  var defer = Q.defer();
+  var url = 'http://slack.com/api/files.list';
+  var d = new Date();
+  d.setDate(d.getDate() - 2);
+  var twoDaysAgo = Math.round(1432410192075 / 1000);
+  
+  var postData = {
+    token: 'xoxp-2191906948-2195788498-4989900812-ca22c5',
+    user: 'U025RP6EN',
+    ts_to: twoDaysAgo,
+    pretty: 1
+  };
+  console.log(postData);
 
-app.use('/', function(req, res) {
-  res.send('hi');
+  unirest.get(url)
+    .header('Accept', 'application/json')
+    .query(postData)
+    .end(function(response) {
+      defer.resolve(response.body);
+    });
+
+  return defer.promise;
+}
+
+app.get('/', function(req, res) {
+  getFiles().then(function(body) {
+    res.json(body);
+  });
 
 });
 
