@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="slackApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="/directives/slackInfo.js"></script>
+  <script src="/factories/slackServer.js"></script>
+</head>
+
+<body>
+  <div slack-info>
+    <label>Slack token: </label>
+    <input ng-model="slackInfoVm.token" type="text" />
+    <br>
+    <label>Days
+      <select ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
+      </select>
+    </label>
+    <div>
+      <a href ng-click="slackInfoVm.deleteFiles()">Delete files:</a>
+    </div>
+    <div>
+    	<textarea></textarea>
+    </div>
+  </div>
+</body>
+
+</html>
