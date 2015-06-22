@@ -41,7 +41,7 @@
       </div>
       <div>
         <label>Files created
-          <select ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
+          <select ng-cloak ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
           </select>
           days ago.
         </label>
@@ -50,10 +50,10 @@
         <a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()">Delete files</a>
       </div>
       <div style="margin-top:25px;">
-        <p> Files deleted: <strong>{{slackInfoVm.deleteCount}}</strong></p>
+        <p> Files deleted: <strong ng-cloak>{{slackInfoVm.deleteCount}}</strong></p>
       </div>
       <div>
-        <textarea rows="10" cols="50" ng-model="slackInfoVm.response"></textarea>
+        <textarea ng-cloak rows="10" cols="50" ng-model="slackInfoVm.response"></textarea>
       </div>
     </div>
   </div>
