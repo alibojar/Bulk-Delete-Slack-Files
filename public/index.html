@@ -41,8 +41,8 @@
       <div>
         <a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()">Delete files</a>
       </div>
-      <div>
-        <p> Files deleted: {{slackInfoVm.deleteCount}}</p>
+      <div style="margin-top:25px;">
+        <p> Files deleted: <strong>{{slackInfoVm.deleteCount}}</strong></p>
       </div>
       <div>
         <textarea rows="10" cols="50" ng-model="slackInfoVm.response"></textarea>
