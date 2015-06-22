@@ -19,15 +19,15 @@
       <h3>Delete Slack Files</h3>
       <p>Slack allows for a maximum of 100 files to be deleted at one go. If your files are more than 100, refresh and repeat untill they are all deleted.</p>
       <div>
-      <label>Slack token:
-        <input style="width: 350px;" ng-model="slackInfoVm.token" type="text" />
-      </label>
-      <a href="https://slack.com/signin" target="_black">Sign in slack</a>, if you are not already, and find your <code>slack token</code> from the bottom of <a href="https://api.slack.com/web" target="_black">this page</a>.
+        <label>Slack token:
+          <input style="width: 350px;" ng-model="slackInfoVm.token" type="text" />
+        </label>
+        <a href="https://slack.com/signin" target="_black">Sign in slack</a>, if you are not already, and find - or generate - your <code>slack token</code> from the bottom of <a href="https://api.slack.com/web" target="_black">this page</a>.
       </div>
       <div>
         <label>I am
           <select ng-model="slackInfoVm.user" ng-options="users.id as users.name for users in slackInfoVm.usersList">
-          <option value="">-- select a member --</option>
+            <option value="">-- select a member --</option>
           </select>
         </label>
       </div>
@@ -49,6 +49,22 @@
       </div>
     </div>
   </div>
+  <script>
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-64370781-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 </body>
 
 </html>
