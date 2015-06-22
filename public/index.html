@@ -14,15 +14,20 @@
 
 <body>
   <div class="container">
+    <a href="https://github.com/alibojar/Bulk-Delete-Slack-Files"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <div slack-info>
       <h3>Delete Slack Files</h3>
       <p>Slack allows for a maximum of 100 files to be deleted at one go. If your files are more than 100, refresh and repeat untill they are all deleted.</p>
+      <div>
       <label>Slack token:
-        <input ng-model="slackInfoVm.token" type="text" />
+        <input style="width: 350px;" ng-model="slackInfoVm.token" type="text" />
       </label>
+      <a href="https://slack.com/signin" target="_black">Sign in slack</a>, if you are not already, and find your <code>slack token</code> from the bottom of <a href="https://api.slack.com/web" target="_black">this page</a>.
+      </div>
       <div>
         <label>I am
           <select ng-model="slackInfoVm.user" ng-options="users.id as users.name for users in slackInfoVm.usersList">
+          <option value="">-- select a member --</option>
           </select>
         </label>
       </div>
