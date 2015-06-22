@@ -6,22 +6,42 @@
   <script src="app.js"></script>
   <script src="/directives/slackInfo.js"></script>
   <script src="/factories/slackServer.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
 
 <body>
-  <div slack-info>
-    <label>Slack token: </label>
-    <input ng-model="slackInfoVm.token" type="text" />
-    <br>
-    <label>Days
-      <select ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
-      </select>
-    </label>
-    <div>
-      <a href ng-click="slackInfoVm.deleteFiles()">Delete files</a>
-    </div>
-    <div>
-    	<textarea></textarea>
+  <div class="container">
+    <div slack-info>
+      <h3>Delete Slack Files</h3>
+      <p>Slack allows for a maximum of 100 files to be deleted at one go. If your files are more than 100, refresh and repeat untill they are all deleted.</p>
+      <label>Slack token:
+        <input ng-model="slackInfoVm.token" type="text" />
+      </label>
+      <div>
+        <label>I am
+          <select ng-model="slackInfoVm.user" ng-options="users.id as users.name for users in slackInfoVm.usersList">
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>Files created
+          <select ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
+          </select>
+          days ago.
+        </label>
+      </div>
+      <div>
+        <a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()">Delete files</a>
+      </div>
+      <div>
+        <p> Files deleted: {{slackInfoVm.deleteCount}}</p>
+      </div>
+      <div>
+        <textarea rows="10" cols="50" ng-model="slackInfoVm.response"></textarea>
+      </div>
     </div>
   </div>
 </body>
