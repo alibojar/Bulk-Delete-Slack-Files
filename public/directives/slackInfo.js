@@ -5,7 +5,7 @@
 
     slackInfoVm.response = '';
     slackInfoVm.deleteCount = 0;
-    slackInfoVm.token; //xoxp-2191906948-2195788498-6458352101-022c13
+    slackInfoVm.token;
     slackInfoVm.daysList = ['now', 1, 2, 7, 14, 30, 60, 90];
     slackInfoVm.days = slackInfoVm.daysList[slackInfoVm.daysList.length - 1];
 
