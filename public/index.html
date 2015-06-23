@@ -9,10 +9,12 @@
   <meta name="author" content="Ali Bojarpour">
   <link id="favicon" rel="shortcut icon" href="https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png" sizes="16x16 32x32 48x48" type="image/png" />
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angulartics/0.18.0/angulartics.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angulartics/0.18.0/angulartics-ga.min.js"></script>
   <script src="app.js"></script>
   <script src="/directives/slackInfo.js"></script>
   <script src="/factories/slackServer.js"></script>
@@ -47,7 +49,7 @@
         </label>
       </div>
       <div>
-        <a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()">Delete files</a>
+        <a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()" analytics-on="click" analytics-event="DeleteFilesClicked">Delete files</a>
       </div>
       <div style="margin-top:25px;">
         <p> Files deleted: <strong ng-cloak>{{slackInfoVm.deleteCount}}</strong></p>
@@ -71,7 +73,7 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-64370781-1', 'auto');
-  ga('send', 'pageview');
+  //ga('send', 'pageview');
   </script>
 </body>
 

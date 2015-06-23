@@ -1,3 +1,3 @@
 ;(function(){
-  angular.module('slackApp',[]);
+  angular.module('slackApp',['angulartics', 'angulartics.google.analytics']);
 })();
